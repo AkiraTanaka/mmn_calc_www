@@ -1,11 +1,11 @@
 webpackJsonp([0],{
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Shuntsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(55);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kantsu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(29);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -18,25 +18,95 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 /**
- *  順子クラス
+ *  槓子クラス
  */
-var Shuntsu = /** @class */ (function (_super) {
-    __extends(Shuntsu, _super);
-    function Shuntsu() {
+var Kantsu = /** @class */ (function (_super) {
+    __extends(Kantsu, _super);
+    function Kantsu() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    /* 符取得 */
-    Shuntsu.prototype.getHu = function () {
-        return 0;
+    /* 上がり形取得 */
+    Kantsu.prototype.getAgariType = function () {
+        return "";
     };
-    return Shuntsu;
-}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
+    /* 牌数取得 */
+    Kantsu.prototype.getHaiCount = function () {
+        return 3;
+    };
+    return Kantsu;
+}(__WEBPACK_IMPORTED_MODULE_0__kotsu__["a" /* Kotsu */]));
 
-//# sourceMappingURL=shuntsu.js.map
+//# sourceMappingURL=kantsu.js.map
 
 /***/ }),
 
-/***/ 115:
+/***/ 11:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YakuMan; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_yaku__ = __webpack_require__(286);
+
+/**
+ *  役管理クラス
+ */
+var YakuMan = /** @class */ (function () {
+    function YakuMan() {
+    }
+    /** 1飜 */
+    YakuMan.TANYAO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("断么九", "タンヤオ", 1, false);
+    YakuMan.PINHU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("平和", "ピンフ", 1, false);
+    YakuMan.I_PECO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("一盃口", "イーペーコー", 1, false);
+    YakuMan.YAKU_HAI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("役牌", "ヤクハイ", 1, false);
+    /** 2飜 */
+    YakuMan.CHI_TOI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("七対子", "チートイツ", 2, false); // 未
+    YakuMan.ITSUU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("一気通貫", "イッキツウカン", 2, true);
+    YakuMan.TOI_TOI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("対々和", "トイトイホー", 2, false);
+    YakuMan.SAN_ANKO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("三暗刻", "サンアンコウ", 2, false);
+    YakuMan.SAN_KANTSU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("三槓子", "サンカンツ", 2, false);
+    YakuMan.SHOU_SAN_GEN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("小三元", "ショウサンゲン", 2, false);
+    YakuMan.SANSHIKI_DOUJUN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("三色同順", "サンショクドウジュン", 2, true);
+    YakuMan.SANSHIKI_DOUKO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("三色同刻", "サンショクドウコウ", 2, true);
+    YakuMan.TYANTA = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("混全帯幺九", "チャンタ", 2, true);
+    /** 3飜 */
+    YakuMan.RYAN_PECO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("二盃口", "リャンペーコー", 3, false);
+    YakuMan.JUN_TYAN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("純全帯公九", "ジュンチャン", 3, true);
+    /** 4飜 */
+    YakuMan.HON_ROUTOU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("混老頭", "ホンロウトウ", 4, true);
+    YakuMan.HONNITSU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("混一色", "ホンイーソー", 4, true);
+    /** 6飜 */
+    YakuMan.CHINITSU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("清一色", "チンイーソー", 6, true);
+    /** 13飜 */
+    YakuMan.KOKUSHI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("国士無双", "コクシムソウ", 13, false);
+    YakuMan.SU_ANKO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("四暗刻", "スーアンコウ", 13, false);
+    YakuMan.DAI_SAN_GEN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("大三元", "ダイサンゲン", 13, false);
+    YakuMan.CHIN_ROUTOU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("清老頭", "チンロウトウ", 13, true);
+    YakuMan.TSU_I_SO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("字一色", "ツーイーソー", 13, true);
+    YakuMan.RYU_I_SO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("緑一色", "リューイーソウ", 13, false);
+    YakuMan.SHOU_SUU_SHI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("小四喜", "ショウスーシー", 13, false);
+    YakuMan.DAI_SUU_SHI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("大四喜", "ダイスーシー", 13, false);
+    YakuMan.CHUREN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("九蓮宝燈", "チュウレンポウトウ", 13, false); // 未
+    YakuMan.CHI_HO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("地和", "チーホウ", 13, false); // 未
+    YakuMan.TEN_HO = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("天和", "テンホウ", 13, false); // 未
+    /** 古役 */
+    YakuMan.BENI_KUJAKU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("紅孔雀", "ベニクジャク", 13, false);
+    YakuMan.DAI_CHI_SEI = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("大七星", "ダイチーセイ", 13, false); // 未
+    /** 26飜 */
+    YakuMan.SU_TAN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("四暗刻単騎", "スーアンコウタンキ", 26, false);
+    YakuMan.SU_KANTSU = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("四槓子", "スーカンツ", 26, false);
+    YakuMan.JUNSEI_CHUREN = new __WEBPACK_IMPORTED_MODULE_0__models_yaku__["a" /* Yaku */]("純正九蓮宝燈", "ジュンセイチュウレンポウトウ", 26, false); // 未
+    /** 役一覧 */
+    YakuMan.ALL_YAKU_LIST = [
+        YakuMan.PINHU
+    ];
+    return YakuMan;
+}());
+
+//# sourceMappingURL=yakuMan.js.map
+
+/***/ }),
+
+/***/ 116:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -49,11 +119,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 115;
+webpackEmptyAsyncContext.id = 116;
 
 /***/ }),
 
-/***/ 13:
+/***/ 12:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80,53 +150,7 @@ var BaseYakuJudge = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 14:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Yaku; });
-/**
- *  役クラス
- */
-var Yaku = /** @class */ (function () {
-    function Yaku(name, yomi, han, isKuisagri) {
-        this.name = name;
-        this.yomi = yomi;
-        this.han = han;
-        this.isKuisagri = isKuisagri;
-    }
-    /* 役名取得 */
-    Yaku.prototype.getName = function () {
-        return this.name;
-    };
-    /* 役読み仮名取得 */
-    Yaku.prototype.getYomi = function () {
-        return this.yomi;
-    };
-    /* 飜数取得 */
-    Yaku.prototype.getHan = function (isNaki) {
-        var han = this.han;
-        if (this.isKuisagri && isNaki) {
-            han--;
-        }
-        return han;
-    };
-    /* 点数取得 */
-    Yaku.prototype.getScore = function () {
-        return 48000;
-    };
-    /* 役満判定 */
-    Yaku.prototype.isYakuman = function () {
-        return this.han >= 13;
-    };
-    return Yaku;
-}());
-
-//# sourceMappingURL=yaku.js.map
-
-/***/ }),
-
-/***/ 156:
+/***/ 157:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -139,19 +163,19 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 156;
+webpackEmptyAsyncContext.id = 157;
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalcTehaiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_HaiMan__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_models_hai__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_models_hai__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_tehai__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectNakiMentsu_selectNakiMentsu__ = __webpack_require__(206);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -163,7 +187,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -205,29 +228,36 @@ var CalcTehaiPage = /** @class */ (function () {
         var _this = this;
         // 候補一覧をモーダルで表示して選択する
         var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_5__selectNakiMentsu_selectNakiMentsu__["a" /* SelectNakiMentsuPage */], { "selectedHai": selectedHai });
-        modal.onDidDismiss(function (data) {
-            if (data != null && _this.checkAddHai(data.haiList)) {
-                _this.tehai.addDekiMentsuList(data);
+        modal.onDidDismiss(function (mentsu) {
+            if (mentsu != null) {
+                var message = _this.tehai.canAddMentsu(mentsu);
+                if (message != null) {
+                    _this.alertMessage(message);
+                }
+                else {
+                    _this.tehai.addDekiMentsuList(mentsu);
+                }
             }
         });
         modal.present();
     };
     CalcTehaiPage.prototype.addHai = function (selectedHai) {
-        if (this.checkAddHai([selectedHai])) {
+        var message = this.tehai.canAddHai([selectedHai]);
+        if (message != null) {
+            this.alertMessage(message);
+        }
+        else {
             this.tehai.addHai(selectedHai);
         }
     };
-    CalcTehaiPage.prototype.checkAddHai = function (haiList) {
-        var message = this.tehai.canAddHai(haiList);
+    CalcTehaiPage.prototype.alertMessage = function (message) {
         if (message != null) {
             var alert_1 = this.alertCtrl.create({
                 title: message,
                 buttons: ['OK']
             });
             alert_1.present();
-            return false;
         }
-        return true;
     };
     CalcTehaiPage.prototype.deleteHai = function (selectedHai) {
         this.tehai.deleteHai(selectedHai);
@@ -259,12 +289,12 @@ var CalcTehaiPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Anko; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(29);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -295,12 +325,12 @@ var Anko = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnShun; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(56);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -327,53 +357,12 @@ var AnShun = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 203:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Toitsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(55);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-/**
- *  対子クラス
- */
-var Toitsu = /** @class */ (function (_super) {
-    __extends(Toitsu, _super);
-    function Toitsu() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /* 符取得 */
-    Toitsu.prototype.getHu = function () {
-        var hu = 0;
-        if (this.isJihai()) {
-            // 蓮風対子?1
-            hu = 2;
-        }
-        return hu;
-    };
-    return Toitsu;
-}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
-
-//# sourceMappingURL=toitsu.js.map
-
-/***/ }),
-
 /***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Minko; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(29);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -409,7 +398,7 @@ var Minko = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MinShun; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(56);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -442,12 +431,12 @@ var MinShun = /** @class */ (function (_super) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectNakiMentsuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_models_hai__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_HaiMan__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_models_hai__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_HaiMan__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_models_mentsu_minshun__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_models_mentsu_minko__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_models_mentsu_minkan__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_models_mentsu_minkan__ = __webpack_require__(305);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -479,39 +468,39 @@ var SelectNakiMentsuPage = /** @class */ (function () {
             var haiCode = Number.parseInt(baseHai.getCode());
             if (haiCode >= 3) {
                 var shunHaiListR = new Array();
+                shunHaiListR.push(selectedHai);
                 shunHaiListR.push(__WEBPACK_IMPORTED_MODULE_3__common_HaiMan__["a" /* HaiMan */].getHaiByTypeCode(haiType, (haiCode - 2).toString()));
                 shunHaiListR.push(__WEBPACK_IMPORTED_MODULE_3__common_HaiMan__["a" /* HaiMan */].getHaiByTypeCode(haiType, (haiCode - 1).toString()));
-                shunHaiListR.push(selectedHai);
                 nakiMentsuList.push(new __WEBPACK_IMPORTED_MODULE_4__common_models_mentsu_minshun__["a" /* MinShun */](shunHaiListR, new Array()));
             }
             if (haiCode >= 2 && haiCode <= 8) {
                 var minshunHaiListC = new Array();
+                minshunHaiListC.push(selectedHai);
                 minshunHaiListC.push(__WEBPACK_IMPORTED_MODULE_3__common_HaiMan__["a" /* HaiMan */].getHaiByTypeCode(haiType, (haiCode - 1).toString()));
                 minshunHaiListC.push(__WEBPACK_IMPORTED_MODULE_3__common_HaiMan__["a" /* HaiMan */].getHaiByTypeCode(haiType, (haiCode + 1).toString()));
-                minshunHaiListC.push(selectedHai);
                 nakiMentsuList.push(new __WEBPACK_IMPORTED_MODULE_4__common_models_mentsu_minshun__["a" /* MinShun */](minshunHaiListC, new Array()));
             }
             if (haiCode <= 7) {
                 var minshunHaiListL = new Array();
+                minshunHaiListL.push(selectedHai);
                 minshunHaiListL.push(__WEBPACK_IMPORTED_MODULE_3__common_HaiMan__["a" /* HaiMan */].getHaiByTypeCode(haiType, (haiCode + 1).toString()));
                 minshunHaiListL.push(__WEBPACK_IMPORTED_MODULE_3__common_HaiMan__["a" /* HaiMan */].getHaiByTypeCode(haiType, (haiCode + 2).toString()));
-                minshunHaiListL.push(selectedHai);
                 nakiMentsuList.push(new __WEBPACK_IMPORTED_MODULE_4__common_models_mentsu_minshun__["a" /* MinShun */](minshunHaiListL, new Array()));
             }
         }
         // 明刻
         var minkoHaiList = new Array();
+        minkoHaiList.push(selectedHai);
         for (var index = 1; index < 3; index++) {
             minkoHaiList.push(__WEBPACK_IMPORTED_MODULE_2__common_models_hai__["a" /* Hai */].deepCopy(baseHai));
         }
-        minkoHaiList.push(selectedHai);
         nakiMentsuList.push(new __WEBPACK_IMPORTED_MODULE_5__common_models_mentsu_minko__["a" /* Minko */](minkoHaiList, new Array()));
         // 明槓
         var minkanHaiList = new Array();
+        minkanHaiList.push(selectedHai);
         for (var index = 1; index < 4; index++) {
             minkanHaiList.push(__WEBPACK_IMPORTED_MODULE_2__common_models_hai__["a" /* Hai */].deepCopy(baseHai));
         }
-        minkanHaiList.push(selectedHai);
         nakiMentsuList.push(new __WEBPACK_IMPORTED_MODULE_6__common_models_mentsu_minkan__["a" /* Minkan */](minkanHaiList, new Array()));
         this.nakiMentsuList = nakiMentsuList;
     }
@@ -554,13 +543,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_selectNakiMentsu_selectNakiMentsu__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -617,10 +606,10 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -663,9 +652,13 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tehai; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_hai__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_hai__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentsuMan__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentsuMan__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kokushi__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yakuMan__ = __webpack_require__(11);
+
+
 
 
 
@@ -676,8 +669,6 @@ var Tehai = /** @class */ (function () {
     function Tehai() {
         this.haiList = new Array(); //  手牌
         this.dekiMentsuList = new Array(); //  出来メンツ一覧
-        this.haiList = new Array();
-        // this.yakuList = new Array<Yaku>();
     }
     /**
      * 手牌追加
@@ -685,7 +676,7 @@ var Tehai = /** @class */ (function () {
      */
     Tehai.prototype.addHai = function (hai) {
         var addHai = __WEBPACK_IMPORTED_MODULE_0__models_hai__["a" /* Hai */].deepCopy(hai);
-        if (this.getAllHaiList().length == 13) {
+        if (this.getAllHaiCount() == 13) {
             addHai.setAgariFlg(true);
         }
         this.haiList.push(addHai);
@@ -735,6 +726,7 @@ var Tehai = /** @class */ (function () {
     Tehai.prototype.deleteDekiMentsu = function (mentsu) {
         var index = this.dekiMentsuList.indexOf(mentsu);
         this.dekiMentsuList.splice(index, 1);
+        this.haiList.forEach(function (hai) { return hai.setAgariFlg(false); });
         this.afterChangeHai();
     };
     /* 上がり牌取得 */
@@ -789,13 +781,24 @@ var Tehai = /** @class */ (function () {
     };
     /**
      * 牌追加可能判定
-     * @param haiList 追加牌一覧
+     * @param addHaiList 追加牌一覧
      * @returns 判定メッセージ
      */
     Tehai.prototype.canAddHai = function (addHaiList) {
+        return this.getErrorMessage(addHaiList.length, addHaiList);
+    };
+    /**
+     * メンツ追加可能判定
+     * @param addMentsu 追加メンツ
+     * @returns 判定メッセージ
+     */
+    Tehai.prototype.canAddMentsu = function (addMentsu) {
+        return this.getErrorMessage(addMentsu.getHaiCount(), addMentsu.getHaiList());
+    };
+    Tehai.prototype.getErrorMessage = function (addHaiCount, haiList) {
         var _this = this;
         var haiMap = new Map();
-        addHaiList.forEach(function (hai) {
+        haiList.forEach(function (hai) {
             var haiId = hai.getId();
             if (haiMap.has(haiId) == false) {
                 haiMap.set(haiId, []);
@@ -803,7 +806,7 @@ var Tehai = /** @class */ (function () {
             haiMap.get(haiId).push(hai);
         });
         var message = null;
-        if (this.getAllHaiList().length + addHaiList.length > 14) {
+        if (this.getAllHaiCount() + addHaiCount > 14) {
             message = "14牌以上選択できません。";
         }
         else {
@@ -815,6 +818,7 @@ var Tehai = /** @class */ (function () {
         }
         return message;
     };
+    /* 全ての牌一覧取得 */
     Tehai.prototype.getAllHaiList = function () {
         var allHaiList = new Array();
         this.haiList.forEach(function (hai) { return allHaiList.push(hai); });
@@ -822,6 +826,13 @@ var Tehai = /** @class */ (function () {
             mentsu.getHaiList().forEach(function (hai) { return allHaiList.push(hai); });
         });
         return allHaiList;
+    };
+    /* 全ての牌数取得(槓子考慮) */
+    Tehai.prototype.getAllHaiCount = function () {
+        var allHaiCount = 0;
+        this.haiList.forEach(function (hai) { return allHaiCount++; });
+        this.dekiMentsuList.forEach(function (mentsu) { return allHaiCount += mentsu.getHaiCount(); });
+        return allHaiCount;
     };
     Tehai.prototype.getTeHaiCountById = function (haiId) {
         return this.getHaiCountById(this.getAllHaiList(), haiId);
@@ -833,15 +844,16 @@ var Tehai = /** @class */ (function () {
     Tehai.prototype.afterChangeHai = function () {
         var _this = this;
         this.sortList();
-        if (this.getAllHaiList().length == 14) {
+        if (this.getAllHaiCount() == 14) {
             // 国士のメンツ判定
-            // let kokushiJudge = new KokushiJudge();
-            // if (kokushiJudge.judgeYaku(this.haiList)) {
-            //   this.combMentsuList = new Array<CombMentsu>();
-            //   // this.combMentsuList.push(new CombMentsu());
-            // } else {
-            this.combMentsuList = this.combMain(this.haiList);
-            // }
+            var kokushiMentsu = this.checkKokushi(this.haiList);
+            if (kokushiMentsu != null) {
+                this.combMentsuList.push(kokushiMentsu);
+            }
+            else {
+                this.combMentsuList = this.combMain(this.haiList);
+                //  チートイ組み合わせ追加
+            }
             this.combMentsuList.forEach(function (combMentsu) {
                 if (_this.maxCombMentsu == null || _this.maxCombMentsu.getScore() < combMentsu.getScore()) {
                     _this.maxCombMentsu = combMentsu;
@@ -853,16 +865,22 @@ var Tehai = /** @class */ (function () {
             this.maxCombMentsu = null;
         }
     };
+    /** 国士無双判定処理 */
+    Tehai.prototype.checkKokushi = function (haiList) {
+        var kokushiMentsu = new __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__["a" /* CombMentsu */]([new __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kokushi__["a" /* Kokushi */](haiList, null)]);
+        var isKokushi = kokushiMentsu.getYakuList().some(function (yaku) { return yaku == __WEBPACK_IMPORTED_MODULE_4__yakuMan__["a" /* YakuMan */].KOKUSHI; });
+        return isKokushi ? kokushiMentsu : null;
+    };
     /** 牌組み合わせ処理 */
     Tehai.prototype.combMain = function (haiList) {
-        var typeHaiMap = new Map();
-        haiList.forEach(function (hai) {
-            var type = hai.getTypeName();
-            if (typeHaiMap.get(type) == undefined) {
-                typeHaiMap.set(type, new Array());
-            }
-            typeHaiMap.get(type).push(hai);
-        });
+        // let typeHaiMap = new Map<string, Array<Hai>>();
+        // haiList.forEach(hai => {
+        //   let type = hai.getTypeName();
+        //   if (typeHaiMap.get(type) == undefined) {
+        //     typeHaiMap.set(type, new Array<Hai>());
+        //   }
+        //   typeHaiMap.get(type).push(hai);
+        // });
         // 牌組み合わせ一覧生成
         var combList = this.comb(haiList, 3);
         // 面子変換
@@ -923,31 +941,43 @@ var Tehai = /** @class */ (function () {
         });
         // 余りを頭にする
         var fixedMentsuList = new Array();
-        combMentsuList.forEach(function (combMentsu) {
-            var numListList = new Array();
-            combMentsu.forEach(function (mentsu) {
-                mentsu.getHaiNumList().forEach(function (haiNum) {
-                    numListList.push(haiNum);
-                });
-            });
-            var restNumList = new Array();
-            var _loop_1 = function (i) {
-                if (numListList.some(function (num) { return num == i; }) == false) {
-                    restNumList.push(i);
-                }
-            };
-            for (var i = 0; i < haiLength; i++) {
-                _loop_1(i);
-            }
-            var mentsuHaiList = restNumList.map(function (haiNum) { return haiList[haiNum]; });
-            var mentsu = __WEBPACK_IMPORTED_MODULE_2__mentsuMan__["a" /* MentsuMan */].getConstructor(mentsuHaiList, restNumList);
+        if (haiList.length == 2) {
+            var mentsu = __WEBPACK_IMPORTED_MODULE_2__mentsuMan__["a" /* MentsuMan */].getConstructor(haiList, [0, 1]);
             if (mentsu != null) {
-                combMentsu.push(mentsu);
+                var combMentsu_1 = new Array();
+                combMentsu_1.push(mentsu);
                 // 出来メンツを追加する
-                _this.dekiMentsuList.forEach(function (dekiMentsu) { return combMentsu.push(dekiMentsu); });
-                fixedMentsuList.push(new __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__["a" /* CombMentsu */](combMentsu, haiList));
+                this.dekiMentsuList.forEach(function (dekiMentsu) { return combMentsu_1.push(dekiMentsu); });
+                fixedMentsuList.push(new __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__["a" /* CombMentsu */](combMentsu_1));
             }
-        });
+        }
+        else {
+            combMentsuList.forEach(function (combMentsu) {
+                var numListList = new Array();
+                combMentsu.forEach(function (mentsu) {
+                    mentsu.getHaiNumList().forEach(function (haiNum) {
+                        numListList.push(haiNum);
+                    });
+                });
+                var restNumList = new Array();
+                var _loop_1 = function (i) {
+                    if (numListList.some(function (num) { return num == i; }) == false) {
+                        restNumList.push(i);
+                    }
+                };
+                for (var i = 0; i < haiLength; i++) {
+                    _loop_1(i);
+                }
+                var mentsuHaiList = restNumList.map(function (haiNum) { return haiList[haiNum]; });
+                var mentsu = __WEBPACK_IMPORTED_MODULE_2__mentsuMan__["a" /* MentsuMan */].getConstructor(mentsuHaiList, restNumList);
+                if (mentsu != null) {
+                    combMentsu.push(mentsu);
+                    // 出来メンツを追加する
+                    _this.dekiMentsuList.forEach(function (dekiMentsu) { return combMentsu.push(dekiMentsu); });
+                    fixedMentsuList.push(new __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__["a" /* CombMentsu */](combMentsu));
+                }
+            });
+        }
         return fixedMentsuList;
     };
     Tehai.prototype.combMentsuSub = function (start, combMax, list, baseMentsuList, combMentsuList) {
@@ -995,7 +1025,7 @@ var Tehai = /** @class */ (function () {
  *  面子組み合わせクラス
  */
 var CombMentsu = /** @class */ (function () {
-    function CombMentsu(combMentsu, haiList) {
+    function CombMentsu(combMentsu) {
         var _this = this;
         this.combMentsu = new Array(); //  メンツ組み合わせ一覧
         this.haiList = new Array(); // 牌一覧
@@ -1009,6 +1039,14 @@ var CombMentsu = /** @class */ (function () {
         this.calculateHu();
         this.afterCalculate();
     }
+    /* 鳴き判定 */
+    CombMentsu.prototype.isNaki = function () {
+        return this.haiList.some(function (hai) { return hai.isNaki(); });
+    };
+    /* 上がり形取得 */
+    CombMentsu.prototype.getAgariMentsu = function () {
+        return this.combMentsu.find(function (mentsu) { return mentsu.getAgariType() != ""; });
+    };
     /* メンツ組み合わせ一覧取得 */
     CombMentsu.prototype.getMentsuList = function () {
         return this.combMentsu;
@@ -1112,18 +1150,24 @@ var CombMentsu = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Calculator; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__yakuJudge_tanyaoJudge__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuJudge_yakuhaiJudge__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuJudge_kotsuJudge__ = __webpack_require__(287);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuJudge_pecoJudge__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yakuJudge_someteJudge__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__yakuJudge_sanshikiJudge__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__yakuJudge_souzuJudge__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__yakuJudge_sangenJudge__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__yakuJudge_suushiJudge__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__yakuJudge_tyantaJudge__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__yakuJudge_routouJudge__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__yakuJudge_ittsuuJudge__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__yakuJudge_kokushiJudge__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuJudge_chitoiJudge__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuJudge_tanyaoJudge__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuJudge_yakuhaiJudge__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yakuJudge_kotsuJudge__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__yakuJudge_pecoJudge__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__yakuJudge_someteJudge__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__yakuJudge_sanshikiJudge__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__yakuJudge_souzuJudge__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__yakuJudge_sangenJudge__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__yakuJudge_suushiJudge__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__yakuJudge_tyantaJudge__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__yakuJudge_routouJudge__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__yakuJudge_ittsuuJudge__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__yakuJudge_pinhuJudge__ = __webpack_require__(301);
+
+
+
 
 
 
@@ -1144,17 +1188,13 @@ var Calculator = /** @class */ (function () {
     }
     Calculator.calculate = function (combMentsu) {
         var haiList = combMentsu.getHaiList();
-        if (haiList.length == 14) {
+        if (haiList.length >= 14) {
             // ①特殊形の合致
-            // this.yakuJudgeList.forEach(yakuJudge => {
-            //   if (yakuJudge.judgeYaku(combMentsu)) {
-            //     yakuList.push(yakuJudge.getYaku());
-            //   }
-            // });
-            // let kokushiJudge = new KokushiJudge();
-            // kokushiJudge.judge(haiList);
-            // ②基本役の合致
-            this.basicYakuJudgeList.forEach(function (yakuJudge) { return yakuJudge.judge(combMentsu); });
+            this.specialYakuJudgeList.forEach(function (yakuJudge) { return yakuJudge.judge(combMentsu); });
+            if (combMentsu.getYakuList().length == 0) {
+                // ②基本役の合致
+                this.basicYakuJudgeList.forEach(function (yakuJudge) { return yakuJudge.judge(combMentsu); });
+            }
         }
         // 役満がある場合、役満以下の役は切り捨て
         var yakuList = combMentsu.getYakuList();
@@ -1163,23 +1203,24 @@ var Calculator = /** @class */ (function () {
             combMentsu.setYakuList(yakumanList);
         }
     };
-    // private static yakuJudgeList: Array<BaseYakuJudge> = [
-    //   new KokushiJudge(),
-    //   new ChitoiJudge()
-    // ];
+    Calculator.specialYakuJudgeList = [
+        new __WEBPACK_IMPORTED_MODULE_0__yakuJudge_kokushiJudge__["a" /* KokushiJudge */]()
+    ];
     Calculator.basicYakuJudgeList = [
-        new __WEBPACK_IMPORTED_MODULE_11__yakuJudge_ittsuuJudge__["a" /* IttsuuJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_2__yakuJudge_kotsuJudge__["a" /* KotsuJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_3__yakuJudge_pecoJudge__["a" /* PecoJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_10__yakuJudge_routouJudge__["a" /* RoutouJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_5__yakuJudge_sanshikiJudge__["a" /* SanshikiJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_7__yakuJudge_sangenJudge__["a" /* SangenJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_4__yakuJudge_someteJudge__["a" /* SometeJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_6__yakuJudge_souzuJudge__["a" /* SouzuJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_8__yakuJudge_suushiJudge__["a" /* SuushiJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_0__yakuJudge_tanyaoJudge__["a" /* TanyaoJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_9__yakuJudge_tyantaJudge__["a" /* TyantaJudge */](),
-        new __WEBPACK_IMPORTED_MODULE_1__yakuJudge_yakuhaiJudge__["a" /* YakuhaiJudge */]()
+        new __WEBPACK_IMPORTED_MODULE_1__yakuJudge_chitoiJudge__["a" /* ChitoiJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_13__yakuJudge_ittsuuJudge__["a" /* IttsuuJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_4__yakuJudge_kotsuJudge__["a" /* KotsuJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_5__yakuJudge_pecoJudge__["a" /* PecoJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_14__yakuJudge_pinhuJudge__["a" /* PinhuJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_12__yakuJudge_routouJudge__["a" /* RoutouJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_7__yakuJudge_sanshikiJudge__["a" /* SanshikiJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_9__yakuJudge_sangenJudge__["a" /* SangenJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_6__yakuJudge_someteJudge__["a" /* SometeJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_8__yakuJudge_souzuJudge__["a" /* SouzuJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_10__yakuJudge_suushiJudge__["a" /* SuushiJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_2__yakuJudge_tanyaoJudge__["a" /* TanyaoJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_11__yakuJudge_tyantaJudge__["a" /* TyantaJudge */](),
+        new __WEBPACK_IMPORTED_MODULE_3__yakuJudge_yakuhaiJudge__["a" /* YakuhaiJudge */]()
     ];
     return Calculator;
 }());
@@ -1192,9 +1233,165 @@ var Calculator = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KokushiJudge; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+/**
+ *  国士無双判定クラス
+ */
+var KokushiJudge = /** @class */ (function (_super) {
+    __extends(KokushiJudge, _super);
+    function KokushiJudge() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * 役判定
+     * @param combMentsu 組み合わせメンツ
+     * @return 役一覧
+     */
+    KokushiJudge.prototype.judgeYaku = function (combMentsu) {
+        var yakuList = new Array();
+        var haiList = combMentsu.getHaiList();
+        var agariFlg = true;
+        __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].YAOCHU_HAI_LIST.forEach(function (yaoHai) {
+            if (haiList.some(function (hai) { return hai.getId() == yaoHai.getId(); }) == false) {
+                agariFlg = false;
+            }
+        });
+        if (haiList.every(function (hai) { return hai.isYaoChu(); }) == false) {
+            agariFlg = false;
+        }
+        if (agariFlg) {
+            yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].KOKUSHI);
+        }
+        return yakuList;
+    };
+    return KokushiJudge;
+}(__WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__["a" /* BaseYakuJudge */]));
+
+//# sourceMappingURL=kokushiJudge.js.map
+
+/***/ }),
+
+/***/ 286:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Yaku; });
+/**
+ *  役クラス
+ */
+var Yaku = /** @class */ (function () {
+    function Yaku(name, yomi, han, isKuisagri) {
+        this.name = name;
+        this.yomi = yomi;
+        this.han = han;
+        this.isKuisagri = isKuisagri;
+    }
+    /* 役名取得 */
+    Yaku.prototype.getName = function () {
+        return this.name;
+    };
+    /* 役読み仮名取得 */
+    Yaku.prototype.getYomi = function () {
+        return this.yomi;
+    };
+    /* 飜数取得 */
+    Yaku.prototype.getHan = function (isNaki) {
+        var han = this.han;
+        if (this.isKuisagri && isNaki) {
+            han--;
+        }
+        return han;
+    };
+    /* 点数取得 */
+    Yaku.prototype.getScore = function () {
+        return 48000;
+    };
+    /* 役満判定 */
+    Yaku.prototype.isYakuman = function () {
+        return this.han >= 13;
+    };
+    return Yaku;
+}());
+
+//# sourceMappingURL=yaku.js.map
+
+/***/ }),
+
+/***/ 287:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChitoiJudge; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+/**
+ *  七対子判定クラス
+ */
+var ChitoiJudge = /** @class */ (function (_super) {
+    __extends(ChitoiJudge, _super);
+    function ChitoiJudge() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * 役判定
+     * @param combMentsu 組み合わせメンツ
+     * @return 役一覧
+     */
+    ChitoiJudge.prototype.judgeYaku = function (combMentsu) {
+        var yakuList = new Array();
+        var mentsuList = combMentsu.getMentsuList();
+        if (mentsuList.every(function (mentsu) { return mentsu.getHaiList().length == 2; })) {
+            if (mentsuList.every(function (mentsu) { return mentsu.isJihai(); })) {
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].DAI_CHI_SEI);
+            }
+            else {
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].CHI_TOI);
+            }
+        }
+        return yakuList;
+    };
+    return ChitoiJudge;
+}(__WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__["a" /* BaseYakuJudge */]));
+
+//# sourceMappingURL=chitoiJudge.js.map
+
+/***/ }),
+
+/***/ 288:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TanyaoJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1213,9 +1410,7 @@ var __extends = (this && this.__extends) || (function () {
 var TanyaoJudge = /** @class */ (function (_super) {
     __extends(TanyaoJudge, _super);
     function TanyaoJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.TANYAO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("断么九", "タンヤオ", 1, false);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1226,7 +1421,7 @@ var TanyaoJudge = /** @class */ (function (_super) {
         var yakuList = new Array();
         var haiList = combMentsu.getHaiList();
         if (haiList.some(function (hai) { return hai.isYaoChu(); }) == false) {
-            yakuList.push(this.TANYAO);
+            yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].TANYAO);
         }
         return yakuList;
     };
@@ -1237,14 +1432,14 @@ var TanyaoJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 286:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YakuhaiJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1264,9 +1459,7 @@ var __extends = (this && this.__extends) || (function () {
 var YakuhaiJudge = /** @class */ (function (_super) {
     __extends(YakuhaiJudge, _super);
     function YakuhaiJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.YAKU_HAI = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("役牌", "ヤクハイ", 1, false);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1274,12 +1467,11 @@ var YakuhaiJudge = /** @class */ (function (_super) {
      * @return 役一覧
      */
     YakuhaiJudge.prototype.judgeYaku = function (combMentsu) {
-        var _this = this;
         var yakuList = new Array();
-        var kotsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__["a" /* Kotsu */]);
+        var kotsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_1__models_mentsu_kotsu__["a" /* Kotsu */]);
         kotsuList.forEach(function (kotsu) {
             if (kotsu.isJihai()) {
-                yakuList.push(_this.YAKU_HAI);
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].YAKU_HAI);
             }
         });
         return yakuList;
@@ -1291,15 +1483,57 @@ var YakuhaiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 287:
+/***/ 29:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kotsu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(36);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+/**
+ *  刻子クラス
+ */
+var Kotsu = /** @class */ (function (_super) {
+    __extends(Kotsu, _super);
+    function Kotsu() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /* 上がり形取得 */
+    Kotsu.prototype.getAgariType = function () {
+        if (this.isAgari()) {
+            return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].SYABO;
+        }
+        return "";
+    };
+    return Kotsu;
+}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
+
+//# sourceMappingURL=kotsu.js.map
+
+/***/ }),
+
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KotsuJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kotsu__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_ankan__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_mentsu_kantsu__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1314,17 +1548,16 @@ var __extends = (this && this.__extends) || (function () {
 
 
 
+
+
+
 /**
  *  刻子判定クラス
  */
 var KotsuJudge = /** @class */ (function (_super) {
     __extends(KotsuJudge, _super);
     function KotsuJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.TOI_TOI = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("対々和", "トイトイホー", 2, false);
-        _this.SAN_ANKO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("三暗刻", "サンアンコウ", 2, false);
-        _this.SU_ANKO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("四暗刻", "スーアンコウ", 13, false);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1333,20 +1566,41 @@ var KotsuJudge = /** @class */ (function (_super) {
      */
     KotsuJudge.prototype.judgeYaku = function (combMentsu) {
         var yakuList = new Array();
-        var ankoList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__["a" /* Anko */]);
-        switch (ankoList.length) {
+        // 槓子判定
+        var kantsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_4__models_mentsu_kantsu__["a" /* Kantsu */]);
+        switch (kantsuList.length) {
             case 4:
-                yakuList.push(this.SU_ANKO);
-                // 四暗刻はトイトイと重複しないため、リターン
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_6__yakuMan__["a" /* YakuMan */].SU_KANTSU);
                 return yakuList;
             case 3:
-                yakuList.push(this.SAN_ANKO);
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_6__yakuMan__["a" /* YakuMan */].SAN_KANTSU);
                 break;
             default:
                 break;
         }
-        if (combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_3__models_mentsu_kotsu__["a" /* Kotsu */]).length == 4) {
-            yakuList.push(this.TOI_TOI);
+        // 暗刻判定
+        var ankoList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__["a" /* Anko */]);
+        ankoList.concat(combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_3__models_mentsu_ankan__["a" /* Ankan */]));
+        switch (ankoList.length) {
+            case 4:
+                if (combMentsu.getAgariMentsu().getAgariType() == __WEBPACK_IMPORTED_MODULE_1__models_mentsu__["a" /* Mentsu */].TANKI) {
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_6__yakuMan__["a" /* YakuMan */].SU_TAN);
+                }
+                else {
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_6__yakuMan__["a" /* YakuMan */].SU_ANKO);
+                }
+                // 四暗刻はトイトイと重複しないため、リターン
+                return yakuList;
+            case 3:
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_6__yakuMan__["a" /* YakuMan */].SAN_ANKO);
+                break;
+            default:
+                break;
+        }
+        // トイトイ判定
+        var kotsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_5__models_mentsu_kotsu__["a" /* Kotsu */]);
+        if (kotsuList.length == 4) {
+            yakuList.push(__WEBPACK_IMPORTED_MODULE_6__yakuMan__["a" /* YakuMan */].TOI_TOI);
         }
         return yakuList;
     };
@@ -1357,14 +1611,50 @@ var KotsuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 288:
+/***/ 291:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Ankan; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kantsu__ = __webpack_require__(106);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+/**
+ *  暗槓クラス
+ */
+var Ankan = /** @class */ (function (_super) {
+    __extends(Ankan, _super);
+    function Ankan() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /* 符取得 */
+    Ankan.prototype.getHu = function () {
+        return this.isYaochu() ? 16 : 8;
+    };
+    return Ankan;
+}(__WEBPACK_IMPORTED_MODULE_0__kantsu__["a" /* Kantsu */]));
+
+//# sourceMappingURL=ankan.js.map
+
+/***/ }),
+
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PecoJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_anshun__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_anshun__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1384,10 +1674,7 @@ var __extends = (this && this.__extends) || (function () {
 var PecoJudge = /** @class */ (function (_super) {
     __extends(PecoJudge, _super);
     function PecoJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.I_PECO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("一盃口", "イーペーコー", 1, false);
-        _this.RYAN_PECO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("二盃口", "リャンペーコー", 3, false);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1396,7 +1683,7 @@ var PecoJudge = /** @class */ (function (_super) {
      */
     PecoJudge.prototype.judgeYaku = function (combMentsu) {
         var yakuList = new Array();
-        var shuntsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_2__models_mentsu_anshun__["a" /* AnShun */]);
+        var shuntsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_1__models_mentsu_anshun__["a" /* AnShun */]);
         if (shuntsuList.length > 0) {
             var mentsuIdMap_1 = new Map();
             shuntsuList.forEach(function (shuntsu) {
@@ -1419,10 +1706,10 @@ var PecoJudge = /** @class */ (function (_super) {
             // 役設定
             switch (pecoCount_1) {
                 case 1:
-                    yakuList.push(this.I_PECO);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].I_PECO);
                     break;
                 case 2:
-                    yakuList.push(this.RYAN_PECO);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].RYAN_PECO);
                     break;
                 default:
                     break;
@@ -1437,13 +1724,13 @@ var PecoJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 289:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SometeJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1462,11 +1749,7 @@ var __extends = (this && this.__extends) || (function () {
 var SometeJudge = /** @class */ (function (_super) {
     __extends(SometeJudge, _super);
     function SometeJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.HONNITSU = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("混一色", "ホンイーソー", 4, true);
-        _this.CHINITSU = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("清一色", "チンイーソー", 6, true);
-        _this.TSU_I_SO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("字一色", "ツーイーソー", 13, true);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1487,15 +1770,15 @@ var SometeJudge = /** @class */ (function (_super) {
         switch (typeSet.size) {
             case 1:
                 if (typeSet.has("字牌")) {
-                    yakuList.push(this.TSU_I_SO);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].TSU_I_SO);
                 }
                 else {
-                    yakuList.push(this.CHINITSU);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].CHINITSU);
                 }
                 break;
             case 2:
                 if (typeSet.has("字牌")) {
-                    yakuList.push(this.HONNITSU);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].HONNITSU);
                 }
                 break;
             default:
@@ -1510,13 +1793,13 @@ var SometeJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 290:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SanshikiJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1535,10 +1818,7 @@ var __extends = (this && this.__extends) || (function () {
 var SanshikiJudge = /** @class */ (function (_super) {
     __extends(SanshikiJudge, _super);
     function SanshikiJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.SANSHIKI_DOUJUN = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("三色同順", "サンショクドウジュン", 2, true);
-        _this.SANSHIKI_DOUKO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("三色同刻", "サンショクドウコウ", 2, true);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1546,7 +1826,6 @@ var SanshikiJudge = /** @class */ (function (_super) {
      * @return 役一覧
      */
     SanshikiJudge.prototype.judgeYaku = function (combMentsu) {
-        var _this = this;
         var yakuList = new Array();
         var haiCodeMap = new Map();
         combMentsu.getMentsuList().forEach(function (mentsu) {
@@ -1563,10 +1842,10 @@ var SanshikiJudge = /** @class */ (function (_super) {
         haiCodeMap.forEach(function (typeList, haiCode) {
             if (typeList.size == 3) {
                 if (haiCode[0] == haiCode[1]) {
-                    yakuList.push(_this.SANSHIKI_DOUKO);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].SANSHIKI_DOUKO);
                 }
                 else {
-                    yakuList.push(_this.SANSHIKI_DOUJUN);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].SANSHIKI_DOUJUN);
                 }
             }
         });
@@ -1579,14 +1858,14 @@ var SanshikiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 291:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SouzuJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__HaiMan__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1607,13 +1886,11 @@ var SouzuJudge = /** @class */ (function (_super) {
     __extends(SouzuJudge, _super);
     function SouzuJudge() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.RYU_I_SO = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("緑一色", "リューイーソウ", 13, false);
-        _this.BENI_KUJAKU = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("紅孔雀", "ベニクジャク", 13, false);
         _this.BENI_HAI_LIST = [
-            __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU1, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU5, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU7, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU9, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].TYUN
+            __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU1, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU5, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU7, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU9, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].TYUN
         ];
         _this.RYU_HAI_LIST = [
-            __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU2, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU3, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU4, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU6, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].SOU8, __WEBPACK_IMPORTED_MODULE_2__HaiMan__["a" /* HaiMan */].HATSU
+            __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU2, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU3, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU4, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU6, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].SOU8, __WEBPACK_IMPORTED_MODULE_1__HaiMan__["a" /* HaiMan */].HATSU
         ];
         return _this;
     }
@@ -1627,10 +1904,10 @@ var SouzuJudge = /** @class */ (function (_super) {
         var yakuList = new Array();
         var haiList = combMentsu.getHaiList();
         if (haiList.every(function (hai) { return _this.BENI_HAI_LIST.some(function (beni) { return beni.getName() == hai.getName(); }); })) {
-            yakuList.push(this.BENI_KUJAKU);
+            yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].BENI_KUJAKU);
         }
         if (haiList.every(function (hai) { return _this.RYU_HAI_LIST.some(function (beni) { return beni.getName() == hai.getName(); }); })) {
-            yakuList.push(this.RYU_I_SO);
+            yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].RYU_I_SO);
         }
         return yakuList;
     };
@@ -1641,15 +1918,15 @@ var SouzuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 292:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SangenJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_hai__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kotsu__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_hai__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1670,10 +1947,7 @@ var __extends = (this && this.__extends) || (function () {
 var SangenJudge = /** @class */ (function (_super) {
     __extends(SangenJudge, _super);
     function SangenJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.SHOU_SAN_GEN = new __WEBPACK_IMPORTED_MODULE_2__models_yaku__["a" /* Yaku */]("小三元", "ショウサンゲン", 2, false);
-        _this.DAI_SAN_GEN = new __WEBPACK_IMPORTED_MODULE_2__models_yaku__["a" /* Yaku */]("大三元", "ダイサンゲン", 13, false);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1682,17 +1956,16 @@ var SangenJudge = /** @class */ (function (_super) {
      */
     SangenJudge.prototype.judgeYaku = function (combMentsu) {
         var yakuList = new Array();
-        console.log(combMentsu);
         var sangenMentsuList = combMentsu.getMentsuList().filter(function (mentsu) { return mentsu.getHaiType() == __WEBPACK_IMPORTED_MODULE_1__models_hai__["a" /* Hai */].TYPE_SANGEN; });
         if (sangenMentsuList.length == 3) {
-            var ankoLength = sangenMentsuList.filter(function (mentsu) { return mentsu instanceof __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kotsu__["a" /* Kotsu */]; }).length;
+            var ankoLength = sangenMentsuList.filter(function (mentsu) { return mentsu instanceof __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__["a" /* Kotsu */]; }).length;
             // 役設定
             switch (ankoLength) {
                 case 3:
-                    yakuList.push(this.DAI_SAN_GEN);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_3__yakuMan__["a" /* YakuMan */].DAI_SAN_GEN);
                     break;
                 case 2:
-                    yakuList.push(this.SHOU_SAN_GEN);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_3__yakuMan__["a" /* YakuMan */].SHOU_SAN_GEN);
                     break;
                 default:
                     break;
@@ -1707,15 +1980,15 @@ var SangenJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 293:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SuushiJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_hai__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kotsu__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_hai__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1736,10 +2009,7 @@ var __extends = (this && this.__extends) || (function () {
 var SuushiJudge = /** @class */ (function (_super) {
     __extends(SuushiJudge, _super);
     function SuushiJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.SHOU_SUU_SHI = new __WEBPACK_IMPORTED_MODULE_2__models_yaku__["a" /* Yaku */]("小四喜", "ショウスーシー", 13, false);
-        _this.DAI_SUU_SHI = new __WEBPACK_IMPORTED_MODULE_2__models_yaku__["a" /* Yaku */]("大四喜", "ダイスーシー", 13, false);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1750,14 +2020,14 @@ var SuushiJudge = /** @class */ (function (_super) {
         var yakuList = new Array();
         var kazeMentsuList = combMentsu.getMentsuList().filter(function (mentsu) { return mentsu.getHaiType() == __WEBPACK_IMPORTED_MODULE_1__models_hai__["a" /* Hai */].TYPE_KAZEHAI; });
         if (kazeMentsuList.length == 4) {
-            var ankoLength = kazeMentsuList.filter(function (mentsu) { return mentsu instanceof __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kotsu__["a" /* Kotsu */]; }).length;
+            var ankoLength = kazeMentsuList.filter(function (mentsu) { return mentsu instanceof __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__["a" /* Kotsu */]; }).length;
             // 役設定
             switch (ankoLength) {
                 case 4:
-                    yakuList.push(this.DAI_SUU_SHI);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_3__yakuMan__["a" /* YakuMan */].DAI_SUU_SHI);
                     break;
                 case 3:
-                    yakuList.push(this.SHOU_SUU_SHI);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_3__yakuMan__["a" /* YakuMan */].SHOU_SUU_SHI);
                     break;
                 default:
                     break;
@@ -1772,13 +2042,13 @@ var SuushiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 294:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TyantaJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1797,10 +2067,7 @@ var __extends = (this && this.__extends) || (function () {
 var TyantaJudge = /** @class */ (function (_super) {
     __extends(TyantaJudge, _super);
     function TyantaJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.TYANTA = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("混全帯幺九", "チャンタ", 2, true);
-        _this.JUN_TYAN = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("純全帯公九", "ジュンチャン", 3, true);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1814,10 +2081,10 @@ var TyantaJudge = /** @class */ (function (_super) {
         });
         if (tyantaFlg) {
             if (combMentsu.getHaiList().some(function (hai) { return hai.isJihai(); })) {
-                yakuList.push(this.TYANTA);
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].TYANTA);
             }
             else {
-                yakuList.push(this.JUN_TYAN);
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].JUN_TYAN);
             }
         }
         return yakuList;
@@ -1829,13 +2096,13 @@ var TyantaJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 295:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoutouJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1854,10 +2121,7 @@ var __extends = (this && this.__extends) || (function () {
 var RoutouJudge = /** @class */ (function (_super) {
     __extends(RoutouJudge, _super);
     function RoutouJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.HON_ROUTOU = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("混老頭", "ホンロウトウ", 4, true);
-        _this.CHIN_ROUTOU = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("清老頭", "チンロウトウ", 13, true);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1869,10 +2133,10 @@ var RoutouJudge = /** @class */ (function (_super) {
         var haiList = combMentsu.getHaiList();
         if (haiList.every(function (hai) { return hai.isYaoChu(); })) {
             if (combMentsu.getHaiList().some(function (hai) { return hai.isJihai(); })) {
-                yakuList.push(this.HON_ROUTOU);
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].HON_ROUTOU);
             }
             else {
-                yakuList.push(this.CHIN_ROUTOU);
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_1__yakuMan__["a" /* YakuMan */].CHIN_ROUTOU);
             }
         }
         return yakuList;
@@ -1884,14 +2148,14 @@ var RoutouJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 296:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IttsuuJudge; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_yaku__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_shuntsu__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1911,9 +2175,7 @@ var __extends = (this && this.__extends) || (function () {
 var IttsuuJudge = /** @class */ (function (_super) {
     __extends(IttsuuJudge, _super);
     function IttsuuJudge() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.IKKI_TSUUKAN = new __WEBPACK_IMPORTED_MODULE_1__models_yaku__["a" /* Yaku */]("一気通貫", "イッキツウカン", 2, true);
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
      * 役判定
@@ -1921,9 +2183,8 @@ var IttsuuJudge = /** @class */ (function (_super) {
      * @return 役一覧
      */
     IttsuuJudge.prototype.judgeYaku = function (combMentsu) {
-        var _this = this;
         var yakuList = new Array();
-        var shuntsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_2__models_mentsu_shuntsu__["a" /* Shuntsu */]);
+        var shuntsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__["a" /* Shuntsu */]);
         if (shuntsuList.length > 0) {
             var haiTypeMap_1 = new Map();
             shuntsuList.forEach(function (shuntsu) {
@@ -1941,7 +2202,7 @@ var IttsuuJudge = /** @class */ (function (_super) {
             });
             haiTypeMap_1.forEach(function (mentsuIdList) {
                 if (mentsuIdList.length == 3) {
-                    yakuList.push(_this.IKKI_TSUUKAN);
+                    yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].ITSUU);
                 }
             });
         }
@@ -1954,18 +2215,70 @@ var IttsuuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 297:
+/***/ 301:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PinhuJudge; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu__ = __webpack_require__(36);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+/**
+ *  平和判定クラス
+ */
+var PinhuJudge = /** @class */ (function (_super) {
+    __extends(PinhuJudge, _super);
+    function PinhuJudge() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * 役判定
+     * @param combMentsu 組み合わせメンツ
+     * @return 役一覧
+     */
+    PinhuJudge.prototype.judgeYaku = function (combMentsu) {
+        var yakuList = new Array();
+        if (combMentsu.isNaki() == false) {
+            var shuntsuList = combMentsu.getMentsuListByClass(__WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__["a" /* Shuntsu */]);
+            var isPinhu = shuntsuList.some(function (mentsu) { return mentsu.getAgariType() == __WEBPACK_IMPORTED_MODULE_3__models_mentsu__["a" /* Mentsu */].RYANMEN; });
+            if (shuntsuList.length == 4 && isPinhu) {
+                yakuList.push(__WEBPACK_IMPORTED_MODULE_2__yakuMan__["a" /* YakuMan */].PINHU);
+            }
+        }
+        return yakuList;
+    };
+    return PinhuJudge;
+}(__WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__["a" /* BaseYakuJudge */]));
+
+//# sourceMappingURL=pinhuJudge.js.map
+
+/***/ }),
+
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentsuMan; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_mentsu_toitsu__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_mentsu_toitsu__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_minko__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_minshun__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_mentsu_anshun__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_mentsu_agari_tanki__ = __webpack_require__(298);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_mentsu_anshun__ = __webpack_require__(203);
 
 
 
@@ -1985,12 +2298,8 @@ var MentsuMan = /** @class */ (function () {
      */
     MentsuMan.getConstructor = function (haiList, haiNumList) {
         if (haiList != null) {
-            var agariFlg = haiList.some(function (hai) { return hai.isAgari(); });
             var nakiFlg = haiList.some(function (hai) { return hai.isNaki(); });
             if (this.isShuntsu(haiList)) {
-                if (agariFlg) {
-                    // カンチャン、ペンチャン、リャンメン
-                }
                 if (nakiFlg) {
                     return new __WEBPACK_IMPORTED_MODULE_3__models_mentsu_minshun__["a" /* MinShun */](haiList, haiNumList);
                 }
@@ -1999,9 +2308,6 @@ var MentsuMan = /** @class */ (function () {
                 }
             }
             else if (this.isKotsu(haiList)) {
-                if (agariFlg) {
-                    // シャンポン
-                }
                 if (nakiFlg) {
                     return new __WEBPACK_IMPORTED_MODULE_1__models_mentsu_minko__["a" /* Minko */](haiList, haiNumList);
                 }
@@ -2010,9 +2316,6 @@ var MentsuMan = /** @class */ (function () {
                 }
             }
             else if (this.isToitsu(haiList)) {
-                if (agariFlg) {
-                    return new __WEBPACK_IMPORTED_MODULE_5__models_mentsu_agari_tanki__["a" /* Tanki */](haiList, haiNumList);
-                }
                 return new __WEBPACK_IMPORTED_MODULE_0__models_mentsu_toitsu__["a" /* Toitsu */](haiList, haiNumList);
             }
         }
@@ -2092,12 +2395,12 @@ var MentsuMan = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 298:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tanki; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__toitsu__ = __webpack_require__(203);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Toitsu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(36);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -2110,30 +2413,85 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 /**
- *  単騎あがりクラス
+ *  対子クラス
  */
-var Tanki = /** @class */ (function (_super) {
-    __extends(Tanki, _super);
-    function Tanki() {
+var Toitsu = /** @class */ (function (_super) {
+    __extends(Toitsu, _super);
+    function Toitsu() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /* 符取得 */
-    Tanki.prototype.getHu = function () {
-        return _super.prototype.getHu.call(this) + 2;
+    Toitsu.prototype.getHu = function () {
+        var hu = 0;
+        if (this.isJihai()) {
+            // 蓮風対子?1
+            hu = 2;
+        }
+        if (this.getAgariType() == __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].TANKI) {
+            hu += 2;
+        }
+        return hu;
     };
-    return Tanki;
-}(__WEBPACK_IMPORTED_MODULE_0__toitsu__["a" /* Toitsu */]));
+    /* 上がり形取得 */
+    Toitsu.prototype.getAgariType = function () {
+        if (this.isAgari()) {
+            return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].TANKI;
+        }
+        return "";
+    };
+    return Toitsu;
+}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
 
-//# sourceMappingURL=tanki.js.map
+//# sourceMappingURL=toitsu.js.map
 
 /***/ }),
 
-/***/ 299:
+/***/ 304:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kokushi; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(36);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+/**
+ *  国士クラス
+ */
+var Kokushi = /** @class */ (function (_super) {
+    __extends(Kokushi, _super);
+    function Kokushi() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /* 符取得 */
+    Kokushi.prototype.getHu = function () {
+        return 0;
+    };
+    /* 上がり形取得 */
+    Kokushi.prototype.getAgariType = function () {
+        return "";
+    };
+    return Kokushi;
+}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
+
+//# sourceMappingURL=kokushi.js.map
+
+/***/ }),
+
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Minkan; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kantsu__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kantsu__ = __webpack_require__(106);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -2164,44 +2522,12 @@ var Minkan = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 300:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kantsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(55);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-/**
- *  槓子クラス
- */
-var Kantsu = /** @class */ (function (_super) {
-    __extends(Kantsu, _super);
-    function Kantsu() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return Kantsu;
-}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
-
-//# sourceMappingURL=kantsu.js.map
-
-/***/ }),
-
-/***/ 34:
+/***/ 35:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Hai; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__HaiMan__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__HaiMan__ = __webpack_require__(44);
 
 /**
  *  牌クラス
@@ -2308,44 +2634,75 @@ var Hai = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 35:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kotsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(55);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Mentsu; });
 /**
- *  刻子クラス
+ *  面子クラス
  */
-var Kotsu = /** @class */ (function (_super) {
-    __extends(Kotsu, _super);
-    function Kotsu() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var Mentsu = /** @class */ (function () {
+    /**
+     * コンストラクタ
+     * @param haiList 牌一覧
+     * @param haiNumList 牌順序一覧
+     */
+    function Mentsu(haiList, haiNumList) {
+        this.haiList = haiList;
+        this.haiNumList = haiNumList;
+        this.nakiFlg = this.haiList.some(function (hai) { return hai.isNaki(); });
     }
-    return Kotsu;
-}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
+    /* 字牌判定 */
+    Mentsu.prototype.isJihai = function () {
+        return this.haiList.every(function (hai) { return hai.isJihai(); });
+    };
+    /* 么九牌判定 */
+    Mentsu.prototype.isYaochu = function () {
+        return this.haiList.some(function (hai) { return hai.isYaoChu(); });
+    };
+    /* 上がり判定 */
+    Mentsu.prototype.isAgari = function () {
+        return this.haiList.some(function (hai) { return hai.isAgari(); });
+    };
+    /* 牌タイプ取得 */
+    Mentsu.prototype.getHaiType = function () {
+        return this.haiList[0].getTypeName();
+    };
+    /* メンツID取得 */
+    Mentsu.prototype.getMentsuId = function () {
+        return this.haiList.join("");
+    };
+    /* 牌一覧取得 */
+    Mentsu.prototype.getHaiList = function () {
+        return this.haiList;
+    };
+    /* 牌順序一覧取得 */
+    Mentsu.prototype.getHaiNumList = function () {
+        return this.haiNumList;
+    };
+    /* 牌数取得 */
+    Mentsu.prototype.getHaiCount = function () {
+        return this.haiList.length;
+    };
+    Mentsu.TANKI = "単騎";
+    Mentsu.SYABO = "シャボ";
+    Mentsu.PENTYAN = "ペンチャン";
+    Mentsu.KANTYAN = "カンチャン";
+    Mentsu.RYANMEN = "リャンメン";
+    return Mentsu;
+}());
 
-//# sourceMappingURL=kotsu.js.map
+//# sourceMappingURL=mentsu.js.map
 
 /***/ }),
 
-/***/ 54:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HaiMan; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_hai__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_hai__ = __webpack_require__(35);
 
 /**
  *  牌管理クラス
@@ -2462,53 +2819,60 @@ var HaiMan = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Mentsu; });
-/**
- *  面子クラス
- */
-var Mentsu = /** @class */ (function () {
-    /**
-     * コンストラクタ
-     * @param haiList 牌一覧
-     * @param haiNumList 牌順序一覧
-     */
-    function Mentsu(haiList, haiNumList) {
-        this.haiList = haiList;
-        this.haiNumList = haiNumList;
-        this.nakiFlg = this.haiList.some(function (hai) { return hai.isNaki(); });
-    }
-    /* 字牌判定 */
-    Mentsu.prototype.isJihai = function () {
-        return this.haiList.every(function (hai) { return hai.isJihai(); });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Shuntsu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(36);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    /* 么九牌判定 */
-    Mentsu.prototype.isYaochu = function () {
-        return this.haiList.some(function (hai) { return hai.isYaoChu(); });
-    };
-    /* 牌タイプ取得 */
-    Mentsu.prototype.getHaiType = function () {
-        return this.haiList[0].getTypeName();
-    };
-    /* メンツID取得 */
-    Mentsu.prototype.getMentsuId = function () {
-        return this.haiList.join("");
-    };
-    /* 牌一覧取得 */
-    Mentsu.prototype.getHaiList = function () {
-        return this.haiList;
-    };
-    /* 牌順序一覧取得 */
-    Mentsu.prototype.getHaiNumList = function () {
-        return this.haiNumList;
-    };
-    return Mentsu;
-}());
+})();
 
-//# sourceMappingURL=mentsu.js.map
+/**
+ *  順子クラス
+ */
+var Shuntsu = /** @class */ (function (_super) {
+    __extends(Shuntsu, _super);
+    function Shuntsu() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /* 符取得 */
+    Shuntsu.prototype.getHu = function () {
+        var hu = 0;
+        var agariType = this.getAgariType();
+        if (agariType == __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].KANTYAN || agariType == __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].PENTYAN) {
+            hu += 2;
+        }
+        return hu;
+    };
+    /* 上がり形取得 */
+    Shuntsu.prototype.getAgariType = function () {
+        if (this.isAgari()) {
+            var haiList = this.haiList;
+            if (haiList[1].isAgari()) {
+                return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].KANTYAN;
+            }
+            else if (haiList.some(function (hai) { return hai.isAgari() == false && hai.isYaoChu(); })) {
+                return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].PENTYAN;
+            }
+            else {
+                return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].RYANMEN;
+            }
+        }
+        return "";
+    };
+    return Shuntsu;
+}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
+
+//# sourceMappingURL=shuntsu.js.map
 
 /***/ })
 
