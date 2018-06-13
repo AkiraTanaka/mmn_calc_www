@@ -5,7 +5,7 @@ webpackJsonp([0],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kantsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(26);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -45,7 +45,7 @@ var Kantsu = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YakuMan; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_yaku__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_yaku__ = __webpack_require__(288);
 
 /**
  *  役管理クラス
@@ -173,11 +173,12 @@ webpackEmptyAsyncContext.id = 157;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalcTehaiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_HaiMan__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_models_hai__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_tehai__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_tehai__ = __webpack_require__(284);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectNakiMentsu_selectNakiMentsu__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__calc_result_calc_result__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -187,6 +188,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -223,6 +225,7 @@ var CalcTehaiPage = /** @class */ (function () {
             this.addHai(newHai);
         }
         ;
+        this.showResult();
     };
     CalcTehaiPage.prototype.addNakiMentsu = function (selectedHai) {
         var _this = this;
@@ -259,6 +262,12 @@ var CalcTehaiPage = /** @class */ (function () {
             alert_1.present();
         }
     };
+    CalcTehaiPage.prototype.showResult = function () {
+        if (this.tehai.getCombMentsuList().length > 0) {
+            var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_6__calc_result_calc_result__["a" /* CalcResultPage */], { "maxCombMentsu": this.tehai.getMaxCombMentsu() });
+            modal.present();
+        }
+    };
     CalcTehaiPage.prototype.deleteHai = function (selectedHai) {
         this.tehai.deleteHai(selectedHai);
     };
@@ -278,7 +287,7 @@ var CalcTehaiPage = /** @class */ (function () {
     };
     CalcTehaiPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calcTehai',template:/*ion-inline-start:"/Users/tanaka/Desktop/cordova_working/mmn_calc/src/pages/calcTehai/calcTehai.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>点数計算</ion-title>\n    </ion-navbar>  \n</ion-header>\n\n<ion-content class="grid-basic-page">\n    <p padding>牌を選択してください。</p>\n    <ion-grid>\n        <ion-row *ngFor="let row of selectHaiMap">\n            <ion-col *ngFor="let hai of row" >\n                <ion-img src="{{hai.getPngPath()}}" alt="{{hai.getName()}}" (click)="selectHai(hai)"></ion-img>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n    <p padding>【手牌】</p>\n    <ion-grid>\n        <ion-row justify-content-start>\n            <ion-col *ngFor="let hai of tehai.getHaiListWithOutAgariHai()">\n                <img src="{{hai.getPngPath()}}" alt="{{hai.getName()}}" (click)="deleteHai(hai)">\n            </ion-col>\n            <ng-container *ngIf="tehai.getAgariHai() != null">\n                <ion-col>\n                    <img class="yoko" src="{{tehai.getAgariHai().getPngPath()}}" alt="{{tehai.getAgariHai().getName()}}" (click)="deleteHai(tehai.getAgariHai())">\n                </ion-col>\n            </ng-container>\n            <ion-col col-3></ion-col>\n            <ng-container *ngFor="let dekiMentsu of tehai.getDekiMentsuList()">\n                <ion-col *ngFor="let dekiMentusHai of dekiMentsu.getHaiList()">\n                    <img class="{{dekiMentusHai.getVisualClass()}}" src="{{dekiMentusHai.getPngPath()}}" alt="{{dekiMentusHai.getName()}}" (click)="deleteMentsu(dekiMentsu)">\n                </ion-col>\n            </ng-container>\n        </ion-row>\n        <ion-row>\n            <button ion-button (click)="clearList()">Clear</button>\n            <button ion-button (click)="setNakiFlg()">{{ getNakiButtonValue() }}</button>\n            <button ion-button (click)="setDetail()">詳細</button>\n        </ion-row>\n    </ion-grid>\n\n    <p padding>【メンツ】</p>\n    <ion-grid>\n        <ion-row class="mentsu" *ngFor="let combMentsu of tehai.getCombMentsuList()">\n            <ion-col *ngFor="let mentsu of combMentsu.getMentsuList()">\n                <ion-grid>\n                    <ion-row>\n                        <ion-col *ngFor="let hai of mentsu.getHaiList()">\n                            <img class="{{hai.getVisualClass()}}" src="{{hai.getPngPath()}}" alt="{{hai.getName()}}">\n                        </ion-col>\n                    </ion-row>\n                </ion-grid>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n    <p padding>【点数】</p>\n    <ion-grid class="score">\n        <ion-row padding>\n            <ion-col *ngFor="let yaku of tehai.getYakuList()" col-1>\n                <div>{{yaku.getName()}}</div>\n            </ion-col>\n        </ion-row>\n        <ion-row padding>\n            <ion-col col-1><div>{{tehai.getTotalHan()}}飜</div></ion-col>\n            <ion-col col-1><div>{{tehai.getTotalHu()}}符</div></ion-col>\n        </ion-row>\n        <ion-row padding>\n            <ion-col col-1><div>{{tehai.getTotal()}}</div></ion-col>\n            <ion-col col-1><div>{{tehai.getScore()}}点</div></ion-col>\n        </ion-row>\n    </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/tanaka/Desktop/cordova_working/mmn_calc/src/pages/calcTehai/calcTehai.html"*/
+            selector: 'page-calcTehai',template:/*ion-inline-start:"/Users/tanaka/Desktop/cordova_working/mmn_calc/src/pages/calcTehai/calcTehai.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>点数計算</ion-title>\n    </ion-navbar>  \n</ion-header>\n\n<ion-content class="grid-basic-page">\n    <p padding>牌を選択してください。</p>\n    <ion-grid>\n        <ion-row *ngFor="let row of selectHaiMap">\n            <ion-col *ngFor="let hai of row" >\n                <ion-img src="{{hai.getPngPath()}}" alt="{{hai.getName()}}" (click)="selectHai(hai)"></ion-img>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n\n    <p padding>【手牌】</p>\n    <ion-grid>\n        <ion-row justify-content-start>\n            <ion-col *ngFor="let hai of tehai.getHaiListWithOutAgariHai()">\n                <img src="{{hai.getPngPath()}}" alt="{{hai.getName()}}" (click)="deleteHai(hai)">\n            </ion-col>\n            <ng-container *ngIf="tehai.getAgariHai() != null">\n                <ion-col>\n                    <img class="yoko" src="{{tehai.getAgariHai().getPngPath()}}" alt="{{tehai.getAgariHai().getName()}}" (click)="deleteHai(tehai.getAgariHai())">\n                </ion-col>\n            </ng-container>\n            <ion-col col-3></ion-col>\n            <ng-container *ngFor="let dekiMentsu of tehai.getDekiMentsuList()">\n                <ion-col *ngFor="let dekiMentusHai of dekiMentsu.getHaiList()">\n                    <img class="{{dekiMentusHai.getVisualClass()}}" src="{{dekiMentusHai.getPngPath()}}" alt="{{dekiMentusHai.getName()}}" (click)="deleteMentsu(dekiMentsu)">\n                </ion-col>\n            </ng-container>\n        </ion-row>\n        <ion-row>\n            <button ion-button (click)="clearList()">Clear</button>\n            <button ion-button (click)="setNakiFlg()">{{ getNakiButtonValue() }}</button>\n            <button ion-button (click)="setDetail()">詳細</button>\n        </ion-row>\n    </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/tanaka/Desktop/cordova_working/mmn_calc/src/pages/calcTehai/calcTehai.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
     ], CalcTehaiPage);
@@ -294,7 +303,7 @@ var CalcTehaiPage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Anko; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(26);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -330,7 +339,7 @@ var Anko = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnShun; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(46);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -413,7 +422,7 @@ var Toitsu = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Minko; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__kotsu__ = __webpack_require__(26);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -449,7 +458,7 @@ var Minko = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MinShun; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shuntsu__ = __webpack_require__(46);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -482,12 +491,12 @@ var MinShun = /** @class */ (function (_super) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectNakiMentsuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_models_hai__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_HaiMan__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_models_mentsu_minshun__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_models_mentsu_minko__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_models_mentsu_minkan__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_models_mentsu_minkan__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -578,9 +587,56 @@ var SelectNakiMentsuPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalcResultPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the CalcResultPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CalcResultPage = /** @class */ (function () {
+    function CalcResultPage(platform, params, viewCtrl) {
+        this.platform = platform;
+        this.params = params;
+        this.viewCtrl = viewCtrl;
+        this.combMentsu = this.params.get('maxCombMentsu');
+    }
+    CalcResultPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    CalcResultPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-calc-result',template:/*ion-inline-start:"/Users/tanaka/Desktop/cordova_working/mmn_calc/src/pages/calc-result/calc-result.html"*/'<!--\n  Generated template for the CalcResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>計算結果</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="grid-basic-page">\n\n  <p padding>【メンツ】</p>\n  <ion-grid>\n    <ion-row>\n        <ion-col *ngFor="let hai of combMentsu.getHaiList()">\n            <img class="{{hai.getVisualClass()}}" src="{{hai.getPngPath()}}" alt="{{hai.getName()}}">\n        </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <p padding>【点数】</p>\n  <ion-grid class="score">\n      <ion-row padding>\n          <ion-col *ngFor="let yaku of combMentsu.getYakuList()" col-1>\n              <div>{{yaku.getName()}}</div>\n          </ion-col>\n      </ion-row>\n      <ion-row padding>\n          <ion-col col-1><div>{{combMentsu.getTotalHan()}}飜</div></ion-col>\n          <ion-col col-1><div>{{combMentsu.getTotalHu()}}符</div></ion-col>\n      </ion-row>\n      <ion-row padding>\n          <ion-col col-1><div>{{combMentsu.getTotal()}}</div></ion-col>\n          <ion-col col-1><div>{{combMentsu.getScore()}}点</div></ion-col>\n      </ion-row>\n  </ion-grid>\n\n  <ion-row>\n      <button ion-button (click)="dismiss()">OK</button>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/tanaka/Desktop/cordova_working/mmn_calc/src/pages/calc-result/calc-result.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]])
+    ], CalcResultPage);
+    return CalcResultPage;
+}());
+
+//# sourceMappingURL=calc-result.js.map
+
+/***/ }),
+
+/***/ 209:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -588,25 +644,27 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_selectNakiMentsu_selectNakiMentsu__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_calc_result_calc_result__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_selectNakiMentsu_selectNakiMentsu__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -623,10 +681,12 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__["a" /* CalcTehaiPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_selectNakiMentsu_selectNakiMentsu__["a" /* SelectNakiMentsuPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_calc_result_calc_result__["a" /* CalcResultPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_selectNakiMentsu_selectNakiMentsu__["a" /* SelectNakiMentsuPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                // MentsuModuleComponent,
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
@@ -635,11 +695,12 @@ var AppModule = /** @class */ (function () {
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__["a" /* CalcTehaiPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_selectNakiMentsu_selectNakiMentsu__["a" /* SelectNakiMentsuPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_calc_result_calc_result__["a" /* CalcResultPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_selectNakiMentsu_selectNakiMentsu__["a" /* SelectNakiMentsuPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
@@ -651,13 +712,52 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 274:
+/***/ 26:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kotsu; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(36);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+/**
+ *  刻子クラス
+ */
+var Kotsu = /** @class */ (function (_super) {
+    __extends(Kotsu, _super);
+    function Kotsu() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /* 上がり形取得 */
+    Kotsu.prototype.getAgariType = function () {
+        if (this.isAgari()) {
+            return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].SYABO;
+        }
+        return "";
+    };
+    return Kotsu;
+}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
+
+//# sourceMappingURL=kotsu.js.map
+
+/***/ }),
+
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_calcTehai_calcTehai__ = __webpack_require__(201);
@@ -698,15 +798,15 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 283:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Tehai; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_hai__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentsuMan__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kokushi__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_combMentsu__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentsuMan__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_kokushi__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yakuMan__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_mentsu_toitsu__ = __webpack_require__(204);
 
@@ -762,6 +862,10 @@ var Tehai = /** @class */ (function () {
     /* メンツ組み合わせ一覧取得 */
     Tehai.prototype.getCombMentsuList = function () {
         return this.combMentsuList;
+    };
+    /* 最大メンツ組み合わせ取得 */
+    Tehai.prototype.getMaxCombMentsu = function () {
+        return this.maxCombMentsu;
     };
     /* 出来メンツ一覧取得 */
     Tehai.prototype.getDekiMentsuList = function () {
@@ -1104,12 +1208,12 @@ var Tehai = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 284:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CombMentsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__calculator__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__calculator__ = __webpack_require__(286);
 
 /**
  *  面子組み合わせクラス
@@ -1235,26 +1339,26 @@ var CombMentsu = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 285:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Calculator; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__yakuJudge_kokushiJudge__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuJudge_chitoiJudge__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuJudge_tanyaoJudge__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuJudge_yakuhaiJudge__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yakuJudge_kotsuJudge__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__yakuJudge_pecoJudge__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__yakuJudge_someteJudge__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__yakuJudge_sanshikiJudge__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__yakuJudge_souzuJudge__ = __webpack_require__(296);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__yakuJudge_sangenJudge__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__yakuJudge_suushiJudge__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__yakuJudge_tyantaJudge__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__yakuJudge_routouJudge__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__yakuJudge_ittsuuJudge__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__yakuJudge_pinhuJudge__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__yakuJudge_kokushiJudge__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuJudge_chitoiJudge__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuJudge_tanyaoJudge__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuJudge_yakuhaiJudge__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yakuJudge_kotsuJudge__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__yakuJudge_pecoJudge__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__yakuJudge_someteJudge__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__yakuJudge_sanshikiJudge__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__yakuJudge_souzuJudge__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__yakuJudge_sangenJudge__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__yakuJudge_suushiJudge__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__yakuJudge_tyantaJudge__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__yakuJudge_routouJudge__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__yakuJudge_ittsuuJudge__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__yakuJudge_pinhuJudge__ = __webpack_require__(303);
 
 
 
@@ -1319,13 +1423,13 @@ var Calculator = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 286:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KokushiJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HaiMan__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1377,7 +1481,7 @@ var KokushiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 287:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1423,7 +1527,7 @@ var Yaku = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 288:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1475,7 +1579,7 @@ var ChitoiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 289:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1522,52 +1626,13 @@ var TanyaoJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 29:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kotsu; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mentsu__ = __webpack_require__(36);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-/**
- *  刻子クラス
- */
-var Kotsu = /** @class */ (function (_super) {
-    __extends(Kotsu, _super);
-    function Kotsu() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /* 上がり形取得 */
-    Kotsu.prototype.getAgariType = function () {
-        if (this.isAgari()) {
-            return __WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */].SYABO;
-        }
-        return "";
-    };
-    return Kotsu;
-}(__WEBPACK_IMPORTED_MODULE_0__mentsu__["a" /* Mentsu */]));
-
-//# sourceMappingURL=kotsu.js.map
-
-/***/ }),
-
-/***/ 290:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YakuhaiJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_kotsu__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1612,7 +1677,7 @@ var YakuhaiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 291:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1620,9 +1685,9 @@ var YakuhaiJudge = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_anko__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_ankan__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_ankan__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_mentsu_kantsu__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_mentsu_kotsu__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1701,7 +1766,7 @@ var KotsuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 292:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1737,7 +1802,7 @@ var Ankan = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 293:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1814,7 +1879,7 @@ var PecoJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 294:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1891,13 +1956,15 @@ var SometeJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 295:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SanshikiJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__yakuMan__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu_shuntsu__ = __webpack_require__(46);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1908,6 +1975,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+
+
 
 
 /**
@@ -1927,14 +1996,16 @@ var SanshikiJudge = /** @class */ (function (_super) {
         var yakuList = new Array();
         var haiCodeMap = new Map();
         combMentsu.getMentsuList().forEach(function (mentsu) {
-            var haiCodeStr = mentsu.getHaiList().map(function (hai) { return hai.getCode(); }).join("");
-            if (haiCodeMap.has(haiCodeStr) == false) {
-                var typeSet = new Set();
-                haiCodeMap.set(haiCodeStr, typeSet);
-            }
-            var haiType = mentsu.getHaiType();
-            if (haiCodeMap.get(haiCodeStr).has(haiType) == false) {
-                haiCodeMap.get(haiCodeStr).add(haiType);
+            if (mentsu instanceof __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__["a" /* Kotsu */] || mentsu instanceof __WEBPACK_IMPORTED_MODULE_3__models_mentsu_shuntsu__["a" /* Shuntsu */]) {
+                var haiCodeStr = mentsu.getHaiList().map(function (hai) { return hai.getCode(); }).join("");
+                if (haiCodeMap.has(haiCodeStr) == false) {
+                    var typeSet = new Set();
+                    haiCodeMap.set(haiCodeStr, typeSet);
+                }
+                var haiType = mentsu.getHaiType();
+                if (haiCodeMap.get(haiCodeStr).has(haiType) == false) {
+                    haiCodeMap.get(haiCodeStr).add(haiType);
+                }
             }
         });
         haiCodeMap.forEach(function (typeList, haiCode) {
@@ -1956,13 +2027,13 @@ var SanshikiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 296:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SouzuJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HaiMan__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -2016,14 +2087,14 @@ var SouzuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 297:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SangenJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_hai__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -2078,14 +2149,14 @@ var SangenJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 298:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SuushiJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_hai__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_mentsu_kotsu__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -2140,7 +2211,7 @@ var SuushiJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 299:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2194,7 +2265,7 @@ var TyantaJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 300:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2246,13 +2317,13 @@ var RoutouJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 301:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IttsuuJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -2313,13 +2384,13 @@ var IttsuuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 302:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PinhuJudge; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseYakuJudge__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_mentsu_shuntsu__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__yakuMan__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_mentsu__ = __webpack_require__(36);
 var __extends = (this && this.__extends) || (function () {
@@ -2367,7 +2438,7 @@ var PinhuJudge = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 303:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2493,7 +2564,7 @@ var MentsuMan = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 304:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2533,7 +2604,7 @@ var Kokushi = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 305:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2574,7 +2645,7 @@ var Minkan = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Hai; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__HaiMan__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__HaiMan__ = __webpack_require__(45);
 
 /**
  *  牌クラス
@@ -2744,7 +2815,7 @@ var Mentsu = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 44:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2866,7 +2937,7 @@ var HaiMan = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 56:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2923,5 +2994,5 @@ var Shuntsu = /** @class */ (function (_super) {
 
 /***/ })
 
-},[208]);
+},[209]);
 //# sourceMappingURL=main.js.map

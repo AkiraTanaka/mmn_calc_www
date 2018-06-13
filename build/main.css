@@ -25678,6 +25678,77 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-calc-result .grid-basic-page ion-grid.score ion-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+page-calc-result .grid-basic-page ion-grid.score ion-row.mentsu ion-col {
+  width: auto;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+page-calc-result .grid-basic-page ion-col div {
+  background-color: #f0f5ff;
+  border: 1px solid #e6e9ee;
+  border-radius: 2px;
+  padding: 5px;
+  text-align: center;
+}
+
+page-calc-result .grid-basic-page ion-row {
+  display: -webkit-box;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+page-calc-result .grid-basic-page ion-col {
+  padding: 0;
+}
+
+page-calc-result .grid-basic-page ion-row.mentsu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+page-calc-result .grid-basic-page ion-row.mentsu ion-col {
+  width: auto;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+page-calc-result .grid-basic-page img.yoko {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+page-calc-result .grid-basic-page p {
+  padding: 10px 0 0 10px !important;
+  margin: 0;
+}
+
 page-calcTehai .grid-basic-page ion-grid.score ion-row {
   display: -webkit-box;
   display: -webkit-flex;
